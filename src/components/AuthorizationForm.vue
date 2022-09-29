@@ -37,7 +37,7 @@
           type="primary"
           round
           @click="submitForm(this.$refs.formEl)"
-      />
+      >Enter</el-button>
     </div>
   </el-form>
 </template>
@@ -81,7 +81,6 @@ export default {
   }
 }
 </script>
-
 
 <style scoped>
 .left-format {
