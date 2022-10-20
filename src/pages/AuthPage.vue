@@ -42,4 +42,14 @@ export default {
   height: 100%;
   width: 50%;
 }
+body {
+  min-height: 100vh;
+  background-image: radial-gradient(
+      circle 621px at 25.3% 13.8%,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(234, 236, 255, 1) 90%
+  );
+  margin-top: 50px;
+  font-family: "Roboto", sans-serif;
+}
 </style>

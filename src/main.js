@@ -14,11 +14,6 @@ const app = createApp(App)
 components.forEach(component => {
     app.component(component.name, component)
 })
-
-// Object.entries(ElementPlusIconsVue).forEach( it => {
-//     app.component(it.key, it.component)
-// })
-
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
     app.component(key, component)
 }

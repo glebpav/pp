@@ -1,10 +1,12 @@
 <template>
-Mobile
+  <greeting-card/>
 </template>
 
 <script>
+import GreetingCard from "@/components/greetingCard";
 export default {
-  name: "greetingPage"
+  name: "greetingPage",
+  components: {GreetingCard}
 }
 </script>
 
