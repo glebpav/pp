@@ -1,16 +1,26 @@
 <template>
-  <div class="root1">
-    <el-card class="tabsAuth">
-      <el-tabs :tab-position="top" class="demo-tabs">
-        <el-tab-pane label="Authorization">
-          <AuthorizationForm/>
-        </el-tab-pane>
-        <el-tab-pane label=" Registration ">
-          <RegistrationForm/>
-        </el-tab-pane>
-      </el-tabs>
-    </el-card>
-  </div>
+<!--  <div class="root1">-->
+<!--    <el-card class="tabsAuth">-->
+<!--      <el-tabs :tab-position="top" class="demo-tabs">-->
+<!--        <el-tab-pane label="Authorization">-->
+<!--          <AuthorizationForm/>-->
+<!--        </el-tab-pane>-->
+<!--        <el-tab-pane label=" Registration ">-->
+<!--          <RegistrationForm/>-->
+<!--        </el-tab-pane>-->
+<!--      </el-tabs>-->
+<!--    </el-card>-->
+<!--  </div>-->
+
+      <el-card class="tabsAuth" shadow="hover">
+            <AuthorizationForm
+                v-if="typeOfAuth === 0"
+                :typeOfAuth = "typeOfAuth"
+                @changeForm = "changeForm"
+            />
+            <RegistrationForm v-else/>
+      </el-card>
+
 </template>
 
 <script>
@@ -22,7 +32,15 @@ export default {
   name: "AuthPage",
   components: {RegistrationForm, AuthorizationForm},
   data() {
-    return {};
+    return {
+      typeOfAuth: 0,
+    };
+  },
+  methods: {
+    changeForm(formId) {
+      console.log("changeForm")
+      this.typeOfAuth = formId
+    }
   }
 }
 </script>

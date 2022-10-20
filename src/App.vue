@@ -4,7 +4,7 @@
 
 <style>
 body {
-  min-height: 100vh;
+  height: 100%;
   /*background-image: radial-gradient(*/
   /*    circle 621px at 25.3% 13.8%,*/
   /*    rgba(255, 255, 255, 1) 0%,*/
@@ -13,4 +13,8 @@ body {
   background: #efefef;
   font-family: "Roboto", sans-serif;
 }
+.max-height {
+  height: 100%;
+}
+
 </style>

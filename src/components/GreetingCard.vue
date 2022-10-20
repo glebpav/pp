@@ -1,6 +1,6 @@
 <template>
-  <el-card class="card-right">
-    <h1>Вход</h1>
+  <el-card class="card-right" shadow="hover">
+    <h1 class="align-top">Вход</h1>
     <img class="logo-img center-horizontal" src="@/assets/logo.png"/>
     <router-link to="/auth">
       <el-button class="login-button center-horizontal" type="primary" round>Войти в систему</el-button>
@@ -47,7 +47,9 @@ router-link el-button {
 }
 
 .login-button {
+  text-decoration: none;
   width: 80%;
+  font-size: 16px;
 }
 
 .link-text {
@@ -58,5 +60,9 @@ router-link el-button {
   position: absolute;
   bottom: 7%;
   left: 15%;
+}
+
+.align-top {
+  margin-top: 0px;
 }
 </style>

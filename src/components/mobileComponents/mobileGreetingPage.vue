@@ -3,7 +3,8 @@
 </template>
 
 <script>
-import GreetingCard from "@/components/greetingCard";
+import GreetingCard from "@/components/GreetingCard";
+
 export default {
   name: "greetingPage",
   components: {GreetingCard}
@@ -11,5 +12,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>

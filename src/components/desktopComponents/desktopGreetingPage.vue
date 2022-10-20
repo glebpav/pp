@@ -34,7 +34,7 @@
 <script>
 
 
-import GreetingCard from "@/components/greetingCard";
+import GreetingCard from "@/components/GreetingCard";
 
 export default {
   name: "desktopGreetingPage",
@@ -44,6 +44,7 @@ export default {
 
 <style scoped>
 .greeting-page-root {
+  margin: 0;
   padding: 100px 100px;
 }
 
