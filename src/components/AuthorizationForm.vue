@@ -15,14 +15,14 @@
       <el-form-item prop="login">
         <el-input
             required
-            placeholder="Login"
+            placeholder="Логин"
             v-model="formInputs.login"
             clearable/>
       </el-form-item>
       <el-form-item prop="password">
         <el-input
             required
-            placeholder="Password"
+            placeholder="Пароль"
             type="password"
             v-model="formInputs.password"
             clearable

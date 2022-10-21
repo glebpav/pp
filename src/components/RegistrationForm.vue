@@ -8,56 +8,55 @@
       label-width="100px"
       style="max-width: 460px"
   >
-    <h5 class="left-format">
-      Glad to see You
-    </h5>
-    <el-divider>
-      <el-icon>
-        <OfficeBuilding/>
-      </el-icon>
-    </el-divider>
-    <el-form-item prop="login">
-      <el-input
-          v-model="formInputs.login"
-          placeholder="Login"
-          clearable/>
-    </el-form-item>
-    <el-form-item prop="email">
-      <el-input
-          v-model="formInputs.email"
-          placeholder="Email"
-          clearable/>
-    </el-form-item>
-    <el-form-item prop="fio">
-      <el-input
-          v-model="formInputs.fio"
-          placeholder="Full Name"
-          clearable/>
-    </el-form-item>
-    <el-form-item prop="password">
-      <el-input
-          type="password"
-          v-model="formInputs.password"
-          placeholder="Password"
-          clearable
-          show-password
-      />
-    </el-form-item>
-    <el-form-item prop="checkPass">
-      <el-input
-          type="password"
-          v-model="formInputs.checkPass"
-          placeholder="Confirm"
-          clearable
-          show-password
-      />
-    </el-form-item>
-    <div class="left-format">
+    <h1 class="left-format">
+      Регистрация
+    </h1>
+
+    <div class="inputs-holder">
+      <el-form-item prop="login">
+        <el-input
+            v-model="formInputs.login"
+            placeholder="Логин"
+            clearable/>
+      </el-form-item>
+      <el-form-item prop="email">
+        <el-input
+            v-model="formInputs.email"
+            placeholder="Почта"
+            clearable/>
+      </el-form-item>
+      <el-form-item prop="fio">
+        <el-input
+            v-model="formInputs.fio"
+            placeholder="Фамилия отчество"
+            clearable/>
+      </el-form-item>
+      <el-form-item prop="password">
+        <el-input
+            type="password"
+            v-model="formInputs.password"
+            placeholder="Пароль"
+            clearable
+            show-password
+        />
+      </el-form-item>
+      <el-form-item prop="checkPass">
+        <el-input
+            type="password"
+            v-model="formInputs.checkPass"
+            placeholder="Подтвердить пароль"
+            clearable
+            show-password
+        />
+      </el-form-item>
+    </div>
+    <div class="buttons-holder">
       <el-button
+          class="right-format"
           type="primary"
           round
           @click="submitForm(this.$refs.formEl)">
-        Enter
+        Регистрация
       </el-button>
     </div>
   </el-form>
@@ -129,5 +128,20 @@ export default {
 .left-format {
   margin: auto;
   padding: 5px 0;
+}
+
+.inputs-holder {
+  margin: 60px 0;
+}
+
+.buttons-holder {
+  width: 100%;
+  height: 40px;
+  position: relative;
+}
+
+.right-format {
+  position: absolute;
+  right: 0;
 }
 </style>
