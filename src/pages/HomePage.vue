@@ -1,26 +1,58 @@
 <template>
   <el-container>
-    <el-header class="my-header">
-      <img class="logo-img center-horizontal" src="@/assets/logo.png"/>
+
+    <el-header height="80px" class="my-header">
+      <pr-header
+          :page-header-info="pages[selectedPage].pageHeaderInfo"
+          :selected-page="selectedPage" ></pr-header>
     </el-header>
+
     <el-container>
-      <el-aside width="200px">Aside</el-aside>
+      <el-aside width="80px">
+        <pr-menu :selected-page="selectedPage"></pr-menu>
+      </el-aside>
       <el-main>Main</el-main>
     </el-container>
+
   </el-container>
 </template>
 
 <script>
+import PrHeader from "@/components/UI/PrHeader";
+import PrMenu from "@/components/UI/PrMenu";
+
 export default {
-  name: "HomePage"
+  name: "HomePage",
+  components: {PrMenu, PrHeader},
+  data() {
+    return {
+      selectedPage: 0,
+      pages: [
+        {
+          pageHeaderInfo: {
+            title: "Домашняя страница",
+          }
+        },
+        {
+          pageHeaderInfo: {
+            title: "Профиль",
+          }
+        },
+      ]
+
+    }
+  }
 }
 </script>
 
 <style scoped>
-el-header {
+
+body {
+  background: #FFFFFF;
+}
+
+.my-header {
   padding: 10px;
 }
-.my-header {
-  padding: 30px;
-}
+
 </style>
