@@ -9,7 +9,7 @@
         <div class="align-center" :class="isSelected() ? 'selected-icon' : ''">
           <div class="relative-box">
               <span class="align-center-horizontal icon-size material-symbols-outlined"
-                    >
+              >
               {{ componentInfo.icon }}
               </span>
           </div>
@@ -86,7 +86,7 @@ export default {
   height: 100%;
 }
 
-.empty-plug{
+.empty-plug {
   height: 64px;
 }
 </style>

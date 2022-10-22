@@ -52,4 +52,5 @@ export default {
 .logo-img {
   height: 40px;
 }
+
 </style>
