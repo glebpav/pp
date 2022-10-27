@@ -1,12 +1,15 @@
 <template>
   <el-row>
     <el-col :span="1">
-      <img v-if="isSelected()" src="@/assets/menuComponentRectangle.svg"/>
-      <div v-else class="empty-plug"></div>
+      <Transition name="fade">
+        <img v-if="isSelected()" src="@/assets/menuComponentRectangle.svg"/>
+      </Transition>
     </el-col>
     <el-col :span="23">
       <div class="relative-box full-size">
-        <div class="align-center" :class="isSelected() ? 'selected-icon' : ''">
+        <div class="align-center"
+             :class="isSelected(componentInfo) ? 'selected-icon' : ''"
+             @click="changePage">
           <div class="relative-box">
               <span class="align-center-horizontal icon-size material-symbols-outlined"
               >
@@ -14,7 +17,7 @@
               </span>
           </div>
           <p class="menu-item-text"
-             :class="isSelected() ? 'selected-title' : ''">{{ componentInfo.title }}</p>
+             :class="isSelected() ? 'selected-title' : ''">{{ componentInfo.menuTitle }}</p>
         </div>
       </div>
     </el-col>
@@ -35,8 +38,10 @@ export default {
   },
   methods: {
     isSelected() {
-      console.log(this.componentInfo.id === this.selectedPage)
       return this.componentInfo.id === this.selectedPage
+    },
+    changePage() {
+      this.$emit('changePage', this.componentInfo.id)
     }
   }
 }
@@ -70,10 +75,6 @@ export default {
   'opsz' 48
 }
 
-.selected-icon {
-  color: #409eff;
-}
-
 .align-center {
   position: absolute;
   top: 50%;
@@ -81,9 +82,23 @@ export default {
   transform: translate(50%, -50%);
 }
 
+.selected-icon {
+  color: #409eff;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
 .full-size {
   width: 100%;
-  height: 100%;
+  height: 68px;
 }
 
 .empty-plug {

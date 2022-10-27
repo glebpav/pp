@@ -1,7 +1,10 @@
 <template>
   <div class="menu-margin">
-    <div v-for="componentInfo in components" :key="componentInfo.key">
-      <menu-component :component-info="componentInfo" :selected-page="selectedPage"
+    <div v-for="componentInfo in componentsInfo" :key="componentInfo.id">
+      <menu-component
+          :component-info="componentInfo"
+          :selected-page="selectedPage"
+          @change-page="changePage(componentInfo.id)"
       ></menu-component>
     </div>
   </div>
@@ -16,32 +19,19 @@ export default {
   props: {
     selectedPage: {
       type: Number,
+    },
+    componentsInfo: {
+      type: Object,
     }
   },
   data() {
     return {
-      components: [
-        {
-          id: 0,
-          icon: 'home',
-          title: 'Домой'
-        },
-        {
-          id: 1,
-          icon: 'person',
-          title: 'Профиль'
-        },
-        {
-          id: 2,
-          icon: 'handyman',
-          title: 'Проекты'
-        },
-        {
-          id: 3,
-          icon: 'group',
-          title: 'Менторы'
-        },
-      ]
+
+    }
+  },
+  methods: {
+    changePage(id) {
+      this.$emit('changePage', id)
     }
   }
 }
