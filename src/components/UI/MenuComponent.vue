@@ -1,5 +1,5 @@
 <template>
-  <el-row>
+  <el-row class="unselectable">
     <el-col :span="1">
       <Transition name="fade">
         <img v-if="isSelected()" src="@/assets/menuComponentRectangle.svg"/>
@@ -7,7 +7,7 @@
     </el-col>
     <el-col :span="23">
       <div class="relative-box full-size">
-        <div class="align-center"
+        <div class="align-center pointer"
              :class="isSelected(componentInfo) ? 'selected-icon' : ''"
              @click="changePage">
           <div class="relative-box">
@@ -103,5 +103,16 @@ export default {
 
 .empty-plug {
   height: 64px;
+}
+.pointer {
+  cursor: pointer;
+}
+
+.unselectable {
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
 }
 </style>

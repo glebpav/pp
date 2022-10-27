@@ -6,7 +6,9 @@
       </div>
     </el-col>
     <el-col :span="18">
-      <h1>{{ pageHeaderInfo.title }}</h1>
+      <Transition name="fade" mode="out-in">
+        <h1 :key="pageHeaderInfo.title">{{ pageHeaderInfo.title }}</h1>
+      </Transition>
     </el-col>
     <el-col :span="1">
       <div class="relative-box">
@@ -32,6 +34,8 @@ export default {
     pageHeaderInfo: {
       type: Object
     }
+  },
+  methods: {
   }
 }
 </script>
@@ -51,6 +55,16 @@ export default {
 
 .logo-img {
   height: 40px;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 
 </style>

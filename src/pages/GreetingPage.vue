@@ -1,12 +1,6 @@
 <template>
-
   <desktop-greeting-page class="centered-vertical" v-if="!isMobile()"></desktop-greeting-page>
   <mobile-greeting-page class="centered-vertical" v-else></mobile-greeting-page>
-
-  <!--  <div class="root">-->
-  <!--    <h1> This is greeting page </h1>-->
-  <!--    <router-link to="/auth">Registration</router-link>-->
-  <!--  </div>-->
 </template>
 
 <script>

@@ -1,7 +1,7 @@
-import Main from "@/pages/Main";
+import Main from "@/pages/GreetingPage";
 import {createRouter, createWebHistory} from "vue-router/dist/vue-router";
 import AuthPage from "@/pages/AuthPage";
-import HomePage from "@/pages/HomePage";
+import HomePage from "@/pages/MainPage";
 
 
 const routes = [
