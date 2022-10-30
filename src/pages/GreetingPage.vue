@@ -5,7 +5,7 @@
 
 <script>
 
-import DesktopGreetingPage from "@/components/desktopComponents/desktopGreetingPage";
+import DesktopGreetingPage from "@/components/desktopComponents/DesktopGreetingPage";
 import MobileGreetingPage from "@/components/mobileComponents/mobileGreetingPage";
 
 export default {

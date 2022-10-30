@@ -15,7 +15,11 @@
             @change-page="changePage"
         ></pr-menu>
       </el-aside>
-      <el-main>Main</el-main>
+      <el-main>
+        <main-block
+          :selected-page="selectedPage"
+        />
+      </el-main>
     </el-container>
 
   </el-container>
@@ -24,10 +28,11 @@
 <script>
 import PrHeader from "@/components/UI/PrHeader";
 import PrMenu from "@/components/UI/PrMenu";
+import MainBlock from "@/components/MainBlock";
 
 export default {
   name: "HomePage",
-  components: {PrMenu, PrHeader},
+  components: {MainBlock, PrMenu, PrHeader},
   data() {
     return {
       selectedPage: 1,

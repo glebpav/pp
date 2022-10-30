@@ -20,7 +20,7 @@
     <el-col :span="1">
       <div class="relative-box">
         <div class="relative-box">
-          <el-avatar class="align-center-vertical" :size="50" :src="circleUrl"/>
+          <el-avatar class="align-center-vertical" :size="50"/>
         </div>
       </div>
     </el-col>
