@@ -6,7 +6,7 @@
       </div>
     </el-col>
     <el-col :span="18">
-      <Transition name="fade" mode="out-in">
+      <Transition mode="out-in">
         <h1 :key="pageHeaderInfo.title">{{ pageHeaderInfo.title }}</h1>
       </Transition>
     </el-col>
