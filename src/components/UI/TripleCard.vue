@@ -1,6 +1,6 @@
 <template>
 
-  <div class="row full-size">
+  <div class="row full-size card-title-margins">
     <div class="block">
       <div class="round-card relative-box">
       <span class="material-symbols-outlined accent-icon centered">
@@ -17,7 +17,7 @@
 
   <div class="card">
     <el-row :gutter="40">
-      <el-col :span="8" v-for="col in cardInfo.cardContent" :key="col.id">
+      <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8" v-for="col in cardInfo.cardContent" :key="col.id">
         <span class="material-symbols-outlined accent-icon">
           {{ col.icon }}
         </span>
@@ -99,12 +99,14 @@ export default {
 
 .full-size {
   width: 100%;
-  height: 64px;
+}
+
+.card-title-margins {
+  margin: 10px 0;
 }
 
 .full-height {
   height: 64px;
-  width: 400px;
 }
 
 .centered-text {

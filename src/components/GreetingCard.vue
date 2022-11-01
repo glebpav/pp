@@ -1,5 +1,5 @@
 <template>
-  <el-card class="card-right" shadow="hover">
+  <div class="card card-right" >
     <h1 class="align-top">Вход</h1>
     <img class="logo-img center-horizontal" src="@/assets/logo.png"/>
     <router-link to="/auth">
@@ -7,7 +7,7 @@
     </router-link>
     <p class="link-text centered-text">Забыли пароль?</p>
     <p class="link-text bottom-text">Как получить доступ?</p>
-  </el-card>
+  </div>
 </template>
 
 <script>
@@ -64,5 +64,14 @@ router-link el-button {
 
 .align-top {
   margin-top: 0px;
+}
+
+.card {
+  background: #FFFFFF;
+  border-radius: 13px;
+  padding: 20px 40px;
+  -webkit-box-shadow: 0px 4px 10px 2px rgba(34, 60, 80, 0.07);
+  -moz-box-shadow: 0px 4px 10px 2px rgba(34, 60, 80, 0.07);
+  box-shadow: 0px 4px 10px 2px rgba(34, 60, 80, 0.07);
 }
 </style>

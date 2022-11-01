@@ -37,7 +37,7 @@ export default {
           ]
         },
         {
-          icon: "quiz",
+          icon: "grade",
           title: "Для тех, кто только начинает",
           cardContent: [
             {
