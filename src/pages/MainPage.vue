@@ -36,6 +36,7 @@ export default {
   components: {PageContentBlock, MainBlock, PrMenu, PrHeader},
   data() {
     return {
+      userToken: "sdflkgjcvv23jbl3",
       selectedPage: 0,
       pages: [
         {
@@ -78,8 +79,6 @@ export default {
             menuTitle: 'Менторы'
           }
         }
-
-        ,
       ]
     }
   },
