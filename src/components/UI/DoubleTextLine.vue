@@ -1,6 +1,6 @@
 <template>
   <div class="row text-line">
-    <div class="block">
+    <div class="block strong-text-size">
       <strong> {{ strongText }} </strong>
     </div>
     <div class="block">
@@ -37,6 +37,10 @@ export default {
 
 .text-line {
   margin: 15px 0;
+}
+
+.strong-text-size {
+  margin-right: 10px;
 }
 
 </style>

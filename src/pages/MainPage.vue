@@ -8,7 +8,7 @@
     </el-header>
 
     <el-container>
-      <el-aside width="80px">
+      <el-aside v-show="windowWidth > 776" width="80px">
         <pr-menu
             :selected-page="selectedPage"
             :components-info="getMenuInfo()"
@@ -79,7 +79,8 @@ export default {
             menuTitle: 'Менторы'
           }
         }
-      ]
+      ],
+      windowWidth: window.innerWidth,
     }
   },
   methods: {
@@ -96,8 +97,20 @@ export default {
     },
     changePage(id) {
       this.selectedPage = id
+    },
+    onResize() {
+      this.windowWidth = window.innerWidth
     }
-  }
+  },
+  mounted() {
+    this.$nextTick(() => {
+      window.addEventListener('resize', this.onResize);
+    });
+  },
+
+  beforeDestroy() {
+    window.removeEventListener('resize', this.onResize);
+  },
 }
 </script>
 

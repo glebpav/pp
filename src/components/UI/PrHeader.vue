@@ -1,5 +1,12 @@
 <template>
   <el-row>
+    <el-col :span="4" class="hidden-sm-and-up">
+      <div class="relative-box">
+            <span class="align-left material-symbols-outlined">
+            menu
+            </span>
+      </div>
+    </el-col>
     <el-col :span="5" class="hidden-xs-only">
       <div class="relative-box">
         <img class="logo-img align-center-vertical" src="@/assets/logo.png" alt=""/>
@@ -17,7 +24,7 @@
             </span>
       </div>
     </el-col>
-    <el-col :xs="4" :sm="1" :md="1" :lg="1" :xl="1">
+    <el-col  class="hidden-xs-only" :xs="4" :sm="1" :md="1" :lg="1" :xl="1">
       <div class="relative-box">
           <el-avatar class="align-center" :size="50"/>
       </div>
@@ -69,6 +76,13 @@ export default {
   position: absolute;
   top: 50%;
   right: 0;
+  transform: translate(-50%, -50%);
+}
+.align-left {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-left: 30px;
   transform: translate(-50%, -50%);
 }
 .logo-img {
