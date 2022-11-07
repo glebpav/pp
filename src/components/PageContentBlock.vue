@@ -2,6 +2,7 @@
   <Transition>
     <home-container v-if="selectedPage === 0"/>
     <profile-content v-else-if="selectedPage === 1"/>
+    <peoples-content v-else-if="selectedPage === 3"/>
   </Transition>
   <div v-if="selectedPage === 1">
 
@@ -11,10 +12,11 @@
 <script>
 import HomeContainer from "@/components/HomeContainer";
 import ProfileContent from "@/components/ProfileContent";
+import PeoplesContent from "@/components/PeoplesContent";
 
 export default {
   name: "PageContentBlock",
-  components: {ProfileContent, HomeContainer},
+  components: {PeoplesContent, ProfileContent, HomeContainer},
   props: {
     selectedPage: {
       type: Number

@@ -2,7 +2,7 @@
   <el-row>
     <el-col :span="4" class="hidden-sm-and-up">
       <div class="relative-box">
-            <span class="align-left material-symbols-outlined">
+            <span class="align-right material-symbols-outlined">
             menu
             </span>
       </div>
@@ -78,7 +78,7 @@ export default {
   right: 0;
   transform: translate(-50%, -50%);
 }
-.align-left {
+.align-right {
   position: absolute;
   top: 50%;
   left: 0;
