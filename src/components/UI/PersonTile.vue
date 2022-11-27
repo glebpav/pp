@@ -19,7 +19,7 @@
       </el-col>
       <el-col :span="8">
         <div class="relative">
-          <el-button class="align-center-vertical align-right" type="primary" :icon="Search" plain>Search</el-button>
+          <el-button class="align-center-vertical align-right" type="primary" :icon="Upload" plain>Пригласить</el-button>
         </div>
       </el-col>
     </el-row>

@@ -1,7 +1,7 @@
 <template>
   <el-row class="content-padding" :class="{'content-min-padding': smallViewPort}" :gutter="20">
-    <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8" ref="imgBlock">
-      <el-row>
+    <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8">
+      <el-row ref="imgBlock">
         <el-col :xs="10" :sm="24" :md="24" :lg="24" :xl="24">
           <img class="profile-img" :src="user.logoSrc"/>
         </el-col>
@@ -63,16 +63,27 @@ export default {
       this.user.status = "руководитель"
       this.user.bio = "дорогу осилит идущий"
       this.user.technologyStack = ["Python", "DataScience", "Java", "SpringBoot", "R", "Judo"]
-
+      this.matchHeight();
     },
     onResize() {
       this.windowWidth = window.innerWidth;
-      this.matchHeight();
-      if (this.windowWidth < 500) this.smallViewPort = true;
+
+      if (this.windowWidth < 500) {
+        this.smallViewPort = true;
+      } else {
+        this.smallViewPort = false;
+      }
+
+      if (this.windowWidth < 767) {
+        this.$refs.infoBlock.style.height = 'auto';
+      } else {
+        this.matchHeight();
+      }
     },
     matchHeight() {
       this.imgBlockHeight = this.$refs.imgBlock.$el.clientHeight;
-      this.$refs.infoBlock.$el.style.height = this.imgBlockHeight;
+      console.log((this.imgBlockHeight))
+      this.$refs.infoBlock.style.height = this.imgBlockHeight + 'px';
       console.log("new hei")
     }
   },
@@ -108,7 +119,7 @@ export default {
   padding: 10px 50px;
 }
 .content-min-padding {
-  padding: 30px 10px;
+  padding: 10px 10px;
 }
 .tech-size {
   max-width: 270px;
