@@ -43,7 +43,7 @@
       </el-col>
     </el-row>
     <div class="relative-box">
-      <el-button class="" type="primary" :icon="Upload" plain>Пригласить</el-button>
+      <el-button class="" type="primary" plain>Пригласить</el-button>
     </div>
   </div>
 </template>

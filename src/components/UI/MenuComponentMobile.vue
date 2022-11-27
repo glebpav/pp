@@ -7,18 +7,24 @@
     </el-col>
     <el-col :span="23">
       <div class="relative-box full-size">
-        <div class="align-center pointer"
-             :class="isSelected(componentInfo) ? 'selected-icon' : ''"
-             @click="changePage">
-          <div class="relative-box">
+          <el-row>
+            <el-col>
+              <div class="align-center pointer"
+                   :class="isSelected(componentInfo) ? 'selected-icon' : ''"
+                   @click="changePage">
+                <div class="relative-box">
               <span class="align-center-horizontal icon-size material-symbols-outlined"
               >
               {{ componentInfo.icon }}
               </span>
-          </div>
-          <p class="menu-item-text"
-             :class="isSelected() ? 'selected-title' : ''">{{ componentInfo.menuTitle }}</p>
-        </div>
+                </div>
+              </div>
+            </el-col>
+            <el-col>
+              <p class="menu-item-text"
+                 :class="isSelected() ? 'selected-title' : ''">{{ componentInfo.menuTitle }}</p>
+            </el-col>
+          </el-row>
       </div>
     </el-col>
   </el-row>
@@ -26,7 +32,7 @@
 
 <script>
 export default {
-  name: "MenuComponent",
+  name: "MenuComponentMobile",
   props: {
     componentInfo: {
       type: Object,
@@ -103,6 +109,7 @@ export default {
 .empty-plug {
   height: 64px;
 }
+
 .pointer {
   cursor: pointer;
 }
@@ -113,5 +120,9 @@ export default {
   -khtml-user-select: none;
   -webkit-user-select: none;
   -o-user-select: none;
+}
+
+.inline {
+  display: inline;
 }
 </style>

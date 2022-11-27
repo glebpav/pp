@@ -4,8 +4,17 @@
     <el-header height="80px" class="my-header">
       <pr-header
           :page-header-info="pages[selectedPage].pageHeaderInfo"
-          :selected-page="selectedPage"></pr-header>
+          :selected-page="selectedPage"
+          @changeMenuVisibility="changeMobileMenuVisibility"></pr-header>
     </el-header>
+
+    <Transition>
+      <MobileMenu
+          v-show="mobileMenuVisibility"
+          :selected-page="selectedPage"
+          :components-info="getMenuInfo()"
+          @change-page="changePage"/>
+    </Transition>
 
     <el-container>
       <el-aside v-show="windowWidth > 776" width="80px">
@@ -17,7 +26,7 @@
       </el-aside>
       <el-main>
         <page-content-block
-          :selected-page="selectedPage"
+            :selected-page="selectedPage"
         />
       </el-main>
     </el-container>
@@ -30,10 +39,11 @@ import PrHeader from "@/components/UI/PrHeader";
 import PrMenu from "@/components/UI/PrMenu";
 import MainBlock from "@/components/PageContentBlock";
 import PageContentBlock from "@/components/PageContentBlock";
+import MobileMenu from "@/components/MobileMenu";
 
 export default {
   name: "HomePage",
-  components: {PageContentBlock, MainBlock, PrMenu, PrHeader},
+  components: {MobileMenu, PageContentBlock, MainBlock, PrMenu, PrHeader},
   data() {
     return {
       userToken: "sdflkgjcvv23jbl3",
@@ -81,9 +91,13 @@ export default {
         }
       ],
       windowWidth: window.innerWidth,
+      mobileMenuVisibility: false,
     }
   },
   methods: {
+    changeMobileMenuVisibility(visibility) {
+      this.mobileMenuVisibility = visibility
+    },
     getMenuInfo() {
       const menuInfo = [];
       this.pages.forEach((page) => {
@@ -100,6 +114,8 @@ export default {
     },
     onResize() {
       this.windowWidth = window.innerWidth
+
+      if (this.windowWidth > 776) this.mobileMenuVisibility = false
     }
   },
   mounted() {
@@ -122,6 +138,16 @@ body {
 
 .my-header {
   padding: 10px;
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
 }
 
 </style>

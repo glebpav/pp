@@ -1,7 +1,7 @@
 <template>
   <el-row>
     <el-col :span="4" class="hidden-sm-and-up">
-      <div class="relative-box">
+      <div class="relative-box" @click="changeMobileMenuVisibility">
             <span class="align-left align-center-vertical material-symbols-outlined">
             menu
             </span>
@@ -24,9 +24,9 @@
             </span>
       </div>
     </el-col>
-    <el-col  class="hidden-xs-only" :xs="4" :sm="1" :md="1" :lg="1" :xl="1">
+    <el-col class="hidden-xs-only" :xs="4" :sm="1" :md="1" :lg="1" :xl="1">
       <div class="relative-box">
-          <el-avatar class="align-center" :size="50"/>
+        <el-avatar class="align-center" :size="50"/>
       </div>
     </el-col>
   </el-row>
@@ -44,10 +44,15 @@ export default {
   },
   data() {
     return {
+      mobileMenuVisibility: false,
       windowWidth: window.innerWidth
     }
   },
   methods: {
+    changeMobileMenuVisibility() {
+      this.mobileMenuVisibility = !this.mobileMenuVisibility
+      this.$emit('changeMenuVisibility', this.mobileMenuVisibility)
+    }
   }
 }
 </script>
@@ -57,27 +62,32 @@ export default {
   height: 100%;
   position: relative;
 }
+
 .header-title {
   margin-left: 20px;
 }
+
 .align-center-vertical {
   position: absolute;
   top: 50%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
+
 .align-center {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 .align-right {
   position: absolute;
   top: 50%;
   right: 0;
   transform: translate(-50%, -50%);
 }
+
 .align-left {
   position: absolute;
   top: 50%;
@@ -85,13 +95,16 @@ export default {
   margin-left: 30px;
   transform: translate(-50%, -50%);
 }
+
 .logo-img {
   height: 40px;
 }
+
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.3s ease;
 }
+
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
