@@ -1,16 +1,16 @@
 <template>
-    <div class="padding-box">
-      <triple-card :card-info="cards[0]"/>
-      <div class="spacer"></div>
-      <triple-card :card-info="cards[1]"/>
-    </div>
+  <div class="padding-box">
+    <triple-card :card-info="cards[0]"/>
+    <div class="spacer"></div>
+    <triple-card :card-info="cards[1]"/>
+  </div>
 </template>
 
 <script>
 import TripleCard from "@/components/UI/TripleCard";
 
 export default {
-  name: "DesktopHomePage",
+  name: "HomeContent",
   components: {TripleCard},
   data() {
     return {

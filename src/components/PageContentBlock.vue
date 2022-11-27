@@ -1,6 +1,6 @@
 <template>
   <Transition>
-    <home-container v-if="selectedPage === 0"/>
+    <home-content v-if="selectedPage === 0"/>
     <profile-content v-else-if="selectedPage === 1"/>
     <projects-content v-else-if="selectedPage === 2"/>
     <peoples-content v-else-if="selectedPage === 3"/>
@@ -11,14 +11,14 @@
 </template>
 
 <script>
-import HomeContainer from "@/components/HomeContainer";
 import ProfileContent from "@/components/ProfileContent";
 import PeoplesContent from "@/components/PeoplesContent";
 import ProjectsContent from "@/components/ProjectsContent";
+import HomeContent from "@/components/HomeContent";
 
 export default {
   name: "PageContentBlock",
-  components: {ProjectsContent, PeoplesContent, ProfileContent, HomeContainer},
+  components: {HomeContent, ProjectsContent, PeoplesContent, ProfileContent},
   props: {
     selectedPage: {
       type: Number

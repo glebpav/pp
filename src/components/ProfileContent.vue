@@ -68,11 +68,7 @@ export default {
     onResize() {
       this.windowWidth = window.innerWidth;
 
-      if (this.windowWidth < 500) {
-        this.smallViewPort = true;
-      } else {
-        this.smallViewPort = false;
-      }
+      this.smallViewPort = this.windowWidth < 500;
 
       if (this.windowWidth < 767) {
         this.$refs.infoBlock.style.height = 'auto';
@@ -84,7 +80,6 @@ export default {
       this.imgBlockHeight = this.$refs.imgBlock.$el.clientHeight;
       console.log((this.imgBlockHeight))
       this.$refs.infoBlock.style.height = this.imgBlockHeight + 'px';
-      console.log("new hei")
     }
   },
   mounted() {
