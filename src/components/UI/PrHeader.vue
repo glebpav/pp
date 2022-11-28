@@ -1,7 +1,7 @@
 <template>
   <el-row>
     <el-col :span="4" class="hidden-sm-and-up">
-      <div class="relative-box" @click="changeMobileMenuVisibility">
+      <div class="relative-box" @click="openMobileMenuVisibility">
             <span class="align-left align-center-vertical material-symbols-outlined">
             menu
             </span>
@@ -44,14 +44,12 @@ export default {
   },
   data() {
     return {
-      mobileMenuVisibility: false,
       windowWidth: window.innerWidth
     }
   },
   methods: {
-    changeMobileMenuVisibility() {
-      this.mobileMenuVisibility = !this.mobileMenuVisibility
-      this.$emit('changeMenuVisibility', this.mobileMenuVisibility)
+    openMobileMenuVisibility() {
+      this.$emit('openMobileMenu')
     }
   }
 }

@@ -1,13 +1,6 @@
 <template>
   <el-container>
 
-    <el-header height="80px" class="my-header">
-      <pr-header
-          :page-header-info="pages[selectedPage].pageHeaderInfo"
-          :selected-page="selectedPage"
-          @changeMenuVisibility="changeMobileMenuVisibility"></pr-header>
-    </el-header>
-
     <Transition>
       <MobileMenu
           v-show="mobileMenuVisibility"
@@ -15,6 +8,13 @@
           :components-info="getMenuInfo()"
           @change-page="changePage"/>
     </Transition>
+
+    <el-header height="80px" class="my-header">
+      <pr-header
+          :page-header-info="pages[selectedPage].pageHeaderInfo"
+          :selected-page="selectedPage"
+          @openMobileMenu="changeMobileMenuVisibility"></pr-header>
+    </el-header>
 
     <el-container>
       <el-aside v-show="windowWidth > 776" width="80px">
@@ -95,8 +95,8 @@ export default {
     }
   },
   methods: {
-    changeMobileMenuVisibility(visibility) {
-      this.mobileMenuVisibility = visibility
+    changeMobileMenuVisibility() {
+      this.mobileMenuVisibility = !this.mobileMenuVisibility
     },
     getMenuInfo() {
       const menuInfo = [];
@@ -111,6 +111,7 @@ export default {
     },
     changePage(id) {
       this.selectedPage = id
+      this.mobileMenuVisibility = false
     },
     onResize() {
       this.windowWidth = window.innerWidth

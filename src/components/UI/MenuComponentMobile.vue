@@ -1,5 +1,5 @@
 <template>
-  <el-row class="unselectable">
+  <el-row class="unselectable menu-item">
     <el-col :span="1">
       <Transition name="fade">
         <img v-if="isSelected()" src="@/assets/menuComponentRectangle.svg"/>
@@ -7,24 +7,25 @@
     </el-col>
     <el-col :span="23">
       <div class="relative-box full-size">
-          <el-row>
-            <el-col>
-              <div class="align-center pointer"
+        <el-row>
+          <el-col :span="12">
+            <div class="relative-box">
+              <div class="align-center-vertical pointer"
                    :class="isSelected(componentInfo) ? 'selected-icon' : ''"
                    @click="changePage">
                 <div class="relative-box">
-              <span class="align-center-horizontal icon-size material-symbols-outlined"
-              >
+              <span class="align-center-vertical align-center-horizontal icon-size material-symbols-outlined">
               {{ componentInfo.icon }}
               </span>
                 </div>
               </div>
-            </el-col>
-            <el-col>
-              <p class="menu-item-text"
-                 :class="isSelected() ? 'selected-title' : ''">{{ componentInfo.menuTitle }}</p>
-            </el-col>
-          </el-row>
+            </div>
+          </el-col>
+          <el-col :span="12">
+            <p class="menu-item-text align-center-vertical"
+               :class="isSelected() ? 'selected-title' : ''">{{ componentInfo.menuTitle }}</p>
+          </el-col>
+        </el-row>
       </div>
     </el-col>
   </el-row>
@@ -56,7 +57,7 @@ export default {
 
 .relative-box {
   position: relative;
-  height: 30px;
+  height: 68px;
 }
 
 .align-center-horizontal {
@@ -122,7 +123,14 @@ export default {
   -o-user-select: none;
 }
 
-.inline {
-  display: inline;
+.menu-item {
+  width: 150px;
+}
+
+.align-center-vertical {
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 </style>

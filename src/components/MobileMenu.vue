@@ -1,12 +1,15 @@
 <template>
   <div class="relative-box">
-    <div class="absolute">
-      <div v-for="componentInfo in componentsInfo" :key="componentInfo.id">
-        <menu-component-mobile
-            :component-info="componentInfo"
-            :selected-page="selectedPage"
-            @change-page="changePage(componentInfo.id)"
-        ></menu-component-mobile>
+    <div class="absolute black-bg"></div>
+    <div class="absolute menu-box">
+      <div class="menu-box">
+        <div v-for="componentInfo in componentsInfo" :key="componentInfo.id">
+          <menu-component-mobile
+              :component-info="componentInfo"
+              :selected-page="selectedPage"
+              @change-page="changePage(componentInfo.id)"
+          ></menu-component-mobile>
+        </div>
       </div>
     </div>
   </div>
@@ -14,6 +17,7 @@
 
 <script>
 import MenuComponentMobile from "@/components/UI/MenuComponentMobile";
+
 export default {
   name: "MobileMenu",
   components: {MenuComponentMobile},
@@ -43,6 +47,17 @@ export default {
 .absolute {
   position: absolute;
   height: 100%;
+}
+
+.menu-box {
+  background: #f4f4f4;
+  height: 100vh;
+}
+
+.black-bg {
+  height: 100vh;
+  width: 100vw;
+  background: rgba(107, 119, 140, 0.67);
 }
 
 </style>
