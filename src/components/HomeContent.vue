@@ -1,5 +1,5 @@
 <template>
-  <div class="padding-box">
+  <div :class="smallViewPort ? 'min-content-min-padding' : 'padding-box'">
     <triple-card :card-info="cards[0]"/>
     <div class="spacer"></div>
     <triple-card :card-info="cards[1]"/>
@@ -57,13 +57,35 @@ export default {
             }
           ]
         }
-      ]
+      ],
+      windowWidth: 0,
+      smallViewPort: false,
     }
-  }
+  },
+  methods: {
+    onResize() {
+      console.log(this.smallViewPort)
+      this.windowWidth = window.innerWidth;
+      this.smallViewPort = this.windowWidth < 500;
+    },
+  },
+  mounted() {
+    this.$nextTick(() => {
+      window.addEventListener('resize', this.onResize);
+    });
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.onResize);
+  },
 }
 </script>
 
 <style scoped>
+
+.content-min-padding {
+  padding: 10px 10px;
+}
+
 .padding-box {
   padding: 10px 10%;
 }

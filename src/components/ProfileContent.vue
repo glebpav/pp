@@ -64,6 +64,7 @@ export default {
       this.user.bio = "дорогу осилит идущий"
       this.user.technologyStack = ["Python", "DataScience", "Java", "SpringBoot", "R", "Judo"]
       this.matchHeight();
+      this.onResize();
     },
     onResize() {
       this.windowWidth = window.innerWidth;
@@ -86,6 +87,7 @@ export default {
     this.$nextTick(() => {
       window.addEventListener('resize', this.onResize);
     });
+    this.matchHeight()
     this.fetchUser();
   },
 
@@ -105,28 +107,33 @@ export default {
   -moz-box-shadow: 0px 4px 10px 2px rgba(34, 60, 80, 0.07);
   box-shadow: 0px 4px 10px 2px rgba(34, 60, 80, 0.07);
 }
+
 .profile-img {
   border-radius: 10vw;
   width: 20vw;
   height: 20vw;
 }
+
 .content-padding {
   padding: 10px 50px;
 }
+
 .content-min-padding {
   padding: 10px 10px;
 }
+
 .tech-size {
   max-width: 270px;
 }
+
 .edit-button {
   background: #f5f5f5;
   width: 20vw;
   min-width: 100px;
-  margin: 10px;
   margin: 5px 0;
   border: solid 1.5px;
 }
+
 .second-card {
   width: 100%;
   margin: 10px 0;
