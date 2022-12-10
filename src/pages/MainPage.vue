@@ -1,12 +1,13 @@
 <template>
-  <el-container>
+  <el-container :class="{'hidden-overflow': mobileMenuVisibility}">
 
     <Transition>
       <MobileMenu
           v-show="mobileMenuVisibility"
           :selected-page="selectedPage"
           :components-info="getMenuInfo()"
-          @change-page="changePage"/>
+          @change-page="changePage"
+          @close-menu="closeMenu"/>
     </Transition>
 
     <el-header height="80px" class="my-header">
@@ -25,9 +26,7 @@
         ></pr-menu>
       </el-aside>
       <el-main>
-        <page-content-block
-            :selected-page="selectedPage"
-        />
+        <page-content-block :selected-page="selectedPage"/>
       </el-main>
     </el-container>
 
@@ -117,6 +116,9 @@ export default {
       this.windowWidth = window.innerWidth
 
       if (this.windowWidth > 776) this.mobileMenuVisibility = false
+    },
+    closeMenu() {
+      this.mobileMenuVisibility = false
     }
   },
   mounted() {
@@ -139,6 +141,11 @@ body {
 
 .my-header {
   padding: 10px;
+}
+
+.hidden-overflow {
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  overflow-x: hidden;
 }
 
 .v-enter-active,

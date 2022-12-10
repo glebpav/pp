@@ -1,5 +1,5 @@
 <template>
-  <el-row class="unselectable menu-item">
+  <el-row class="unselectable menu-item" @click="changePage">
     <el-col :span="1">
       <Transition name="fade">
         <img v-if="isSelected()" src="@/assets/menuComponentRectangle.svg"/>
@@ -8,22 +8,21 @@
     <el-col :span="23">
       <div class="relative-box full-size">
         <el-row>
-          <el-col :span="12">
+          <el-col :span="6">
             <div class="relative-box">
-              <div class="align-center-vertical pointer"
-                   :class="isSelected(componentInfo) ? 'selected-icon' : ''"
-                   @click="changePage">
+              <div class="align-center-vertical align-center-horizontal pointer"
+                   :class="isSelected(componentInfo) ? 'selected-icon' : ''">
                 <div class="relative-box">
-              <span class="align-center-vertical align-center-horizontal icon-size material-symbols-outlined">
+              <span class="align-center-vertical icon-size material-symbols-outlined">
               {{ componentInfo.icon }}
               </span>
                 </div>
               </div>
             </div>
           </el-col>
-          <el-col :span="12">
-            <p class="menu-item-text align-center-vertical"
-               :class="isSelected() ? 'selected-title' : ''">{{ componentInfo.menuTitle }}</p>
+          <el-col :span="18">
+            <p class="menu-item-text align-center-horizontal align-center-vertical"
+               :class="isSelected() ? 'selected-icon' : ''">{{ componentInfo.menuTitle }}</p>
           </el-col>
         </el-row>
       </div>
@@ -125,6 +124,11 @@ export default {
 
 .menu-item {
   width: 150px;
+}
+
+.menu-item:hover {
+  background-color: #dcdcdc;
+  transition: 0.3s;
 }
 
 .align-center-vertical {

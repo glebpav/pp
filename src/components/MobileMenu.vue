@@ -1,6 +1,6 @@
 <template>
   <div class="relative-box">
-    <div class="absolute black-bg"></div>
+    <div class="absolute black-bg" @click="closeMenu"></div>
     <div class="absolute menu-box">
       <div class="menu-box">
         <div v-for="componentInfo in componentsInfo" :key="componentInfo.id">
@@ -32,6 +32,9 @@ export default {
   methods: {
     changePage(id) {
       this.$emit('changePage', id)
+    },
+    closeMenu() {
+      this.$emit('closeMenu')
     }
   }
 }
@@ -51,11 +54,11 @@ export default {
 
 .menu-box {
   background: #f4f4f4;
-  height: 100vh;
+  height: 3000px;
 }
 
 .black-bg {
-  height: 100vh;
+  height: 3000px;
   width: 100vw;
   background: rgba(107, 119, 140, 0.67);
 }
