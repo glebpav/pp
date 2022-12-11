@@ -1,5 +1,5 @@
 <template>
-  <el-container :class="{'hidden-overflow': mobileMenuVisibility}">
+  <el-container>
 
     <Transition>
       <MobileMenu
@@ -144,8 +144,7 @@ body {
 }
 
 .hidden-overflow {
-  overflow-y: hidden; /* Hide vertical scrollbar */
-  overflow-x: hidden;
+
 }
 
 .v-enter-active,

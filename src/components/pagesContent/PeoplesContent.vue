@@ -7,7 +7,7 @@
 
 <script>
 import PrSearch from "@/components/UI/PrSearch";
-import ProfileContent from "@/components/ProfileContent";
+import ProfileContent from "@/components/pagesContent/ProfileContent";
 import PersonTile from "@/components/UI/PersonTile";
 export default {
   name: "PeoplesContent",

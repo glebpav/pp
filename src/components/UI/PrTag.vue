@@ -14,9 +14,13 @@
 <script>
 export default {
   name: "PrTag",
+  props: {
+    color: {}
+  },
   methods: {
     pointColor() {
       const colors = ['#3E9DF4', '#ff63f8', '#c73ef4', '#fdc601', '#22e8d0', '#d12121', '#FF8A00', '#2E64CE', '#2CC83C'];
+      if (this.color !== undefined) return this.color
       return colors[Math.floor(Math.random() * colors.length)];
     }
   },

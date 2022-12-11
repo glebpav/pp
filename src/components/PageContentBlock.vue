@@ -11,10 +11,10 @@
 </template>
 
 <script>
-import ProfileContent from "@/components/ProfileContent";
-import PeoplesContent from "@/components/PeoplesContent";
-import ProjectsContent from "@/components/ProjectsContent";
-import HomeContent from "@/components/HomeContent";
+import ProfileContent from "@/components/pagesContent/ProfileContent";
+import PeoplesContent from "@/components/pagesContent/PeoplesContent";
+import ProjectsContent from "@/components/pagesContent/ProjectsContent";
+import HomeContent from "@/components/pagesContent/HomeContent";
 
 export default {
   name: "PageContentBlock",

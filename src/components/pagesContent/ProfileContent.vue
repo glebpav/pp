@@ -90,7 +90,6 @@ export default {
     this.matchHeight()
     this.fetchUser();
   },
-
   beforeDestroy() {
     window.removeEventListener('resize', this.onResize);
   },

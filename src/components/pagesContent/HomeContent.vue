@@ -1,5 +1,5 @@
 <template>
-  <div :class="smallViewPort ? 'min-content-min-padding' : 'padding-box'">
+  <div :class="smallViewPort ? 'content-min-padding' : 'padding-box'">
     <triple-card :card-info="cards[0]"/>
     <div class="spacer"></div>
     <triple-card :card-info="cards[1]"/>
