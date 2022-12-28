@@ -22,13 +22,30 @@ export default {
       let user = {
         name: "Алексей Егоров",
         institution: "НИЯУ МИФИ",
-        logoSrc: require("@/assets/userLogoSample.png"),
+        logoSrc: require("@/assets/Ellipse4.png"),
         technologyStack: ["Python", "DataScience", "Java", "SpringBoot", "R", "Judo"],
       }
       this.listPeople.push(user)
+      user = {
+        name: "Анна Бучинская",
+        institution: "НИЯУ МИФИ",
+        logoSrc: require("@/assets/Ellipse6.png"),
+        technologyStack: ["Python", "DataScience", "Java", "SpringBoot", "R", "Judo"],
+      }
       this.listPeople.push(user)
+      user = {
+        name: "Аделя Хасанова",
+        institution: "НИЯУ МИФИ",
+        logoSrc: require("@/assets/Ellipse5.png"),
+        technologyStack: ["Python", "DataScience", "Java", "SpringBoot", "R", "Judo"],
+      }
       this.listPeople.push(user)
-      this.listPeople.push(user)
+      user = {
+        name: "Михаил Портнов",
+        institution: "НИЯУ МИФИ",
+        logoSrc: require("@/assets/Ellipse 7.png"),
+        technologyStack: ["Python", "DataScience", "Java", "SpringBoot", "Ядерная бомба", "R", "Judo"],
+      }
       this.listPeople.push(user)
     }
   },
